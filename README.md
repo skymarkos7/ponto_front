@@ -1,5 +1,17 @@
 # PontoFront
 
+
+
+- Git
+  - commits feitos em suas features
+  - develop é a minha branch base para o desenvolvimento
+  - todas vão para master após versão estável
+
+
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
 
 ## Development server
