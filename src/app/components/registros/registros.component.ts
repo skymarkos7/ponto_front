@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MeuServicoService } from '../../meu-servico.service';
 
 @Component({
   selector: 'app-registros',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./registros.component.css']
 })
 export class RegistrosComponent {
+
+  constructor(private meuServico: MeuServicoService) { }
+
+  ngOnInit() {
+    this.meuServico.getData().subscribe(data => {
+      console.log(data);
+    });
+  }
+
 
 }
