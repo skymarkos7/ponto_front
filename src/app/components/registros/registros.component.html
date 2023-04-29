@@ -1,6 +1,13 @@
 <h3>registros works!</h3>
 
 
-<ul>
-  <li *ngFor="let item of dadosDaApi">{{item.nome}}</li>
-</ul>
+<div class="body">
+
+<div class="row">
+  <div class="card green" *ngFor="let item of dadosDaApi">
+    <h2>{{item.nome}}</h2>
+    <p>{{item.email}}</p>
+  </div>
+
+</div>
+</div>
