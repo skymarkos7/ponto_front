@@ -7,12 +7,14 @@ import { MeuServicoService } from '../../meu-servico.service';
   styleUrls: ['./registros.component.css']
 })
 export class RegistrosComponent {
+  dadosDaApi: any;
 
   constructor(private meuServico: MeuServicoService) { }
 
   ngOnInit() {
     this.meuServico.getData().subscribe(data => {
-      console.log(data);
+      this.dadosDaApi = data.data;
+      console.log(data.data);
     });
   }
 
