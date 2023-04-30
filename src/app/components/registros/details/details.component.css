@@ -1,0 +1,41 @@
+
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  min-width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card h2 {
+  margin: 20px 10px 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card p {
+  margin: 10px;
+  font-size: 18px;
+  color: #666;
+}
+
+.card-info-item{
+  margin: 10px;
+}
