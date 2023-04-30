@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetailsComponent } from './components/registros/details/details.component';
 import { NavegacaoComponent } from './components/navegacao/navegacao.component';
+import { IConfig } from 'ngx-mask'
 
 @NgModule({
   declarations: [
@@ -25,8 +26,12 @@ import { NavegacaoComponent } from './components/navegacao/navegacao.component';
     HttpClientModule,
     NgbModule,
 
+
+
+
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

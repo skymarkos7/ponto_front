@@ -1,0 +1,70 @@
+/* Estilo para o formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 32px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+}
+
+/* Estilo para as labels */
+label {
+  font-weight: bold;
+}
+
+/* Estilo para os inputs */
+input, select {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Estilo para os inputs com erro */
+input:invalid {
+  border-color: red;
+}
+
+/* Estilo para o botão */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Estilo para o botão quando hover ou focus */
+button[type="submit"]:hover, button[type="submit"]:focus {
+  background-color: #398038;
+}
+
+/* Estilo para mensagens de erro */
+input:invalid ~ .error-message {
+  display: block;
+  color: red;
+  font-size: 12px;
+}
+
+/* Estilo para o container de mensagens de erro */
+.error-message-container {
+  margin-top: 8px;
+}
+
+/* Estilo para o container de mensagens de sucesso */
+.success-message-container {
+  margin-top: 8px;
+  color: green;
+  font-weight: bold;
+}
