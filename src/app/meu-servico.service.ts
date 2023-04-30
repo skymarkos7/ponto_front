@@ -11,4 +11,10 @@ export class MeuServicoService {
   getData(): Observable<any> {
     return this.http.get('http://127.0.0.1:8000/api/registros');
   }
+
+  getDetails(): Observable<any> {
+    console.log('service');
+    return this.http.get('http://127.0.0.1:8000/api/detalhes/1');
+
+  }
 }
