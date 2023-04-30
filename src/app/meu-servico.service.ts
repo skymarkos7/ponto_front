@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class MeuServicoService {
   constructor(private http: HttpClient) { }
 
-  private informacoes: any;
+  // private informacoes: any;
 
 
   getData(): Observable<any> {
@@ -21,11 +21,13 @@ export class MeuServicoService {
   }
 
   setInformacoes(dados: any) {
-    this.informacoes = dados;
-    console.log(this.informacoes);
+    sessionStorage.setItem('id', dados);
+    // this.localStorageService.set('idade', 30);
+    // this.informacoes = dados;
+    console.log(dados);
   }
 
   getInformacoes(): any {
-    return this.informacoes;
+    return sessionStorage.getItem('id');
   }
 }

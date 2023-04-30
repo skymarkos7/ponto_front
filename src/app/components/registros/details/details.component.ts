@@ -10,17 +10,16 @@ import { MeuServicoService } from 'src/app/meu-servico.service';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  id: any;
   http: any;
   dadosDetails: any;
 
   constructor(private route: ActivatedRoute, private meuServico: MeuServicoService) {}
 
   ngOnInit() {
-    this.id = this.meuServico.getInformacoes();
-    console.log(this.id);
+    let id = this.meuServico.getInformacoes();
+    console.log('get', id);
 
-    this.meuServico.getDetails(this.id).subscribe(data => {
+    this.meuServico.getDetails(id).subscribe(data => {
       this.dadosDetails = data;
     });
 
