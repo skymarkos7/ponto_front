@@ -8,7 +8,7 @@ import { DetailsComponent } from './components/registros/details/details.compone
 
 const routes: Routes = [
   { path: 'registros', component: RegistrosComponent },
-  { path: 'form', component: FormComponent },
+  { path: ':nome/registrar', component: FormComponent },
   { path: ':nome/validar', component: DetailsComponent },
 ];
 
