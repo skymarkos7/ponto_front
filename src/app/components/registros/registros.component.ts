@@ -8,6 +8,9 @@ import { MeuServicoService } from '../../meu-servico.service';
 })
 export class RegistrosComponent {
   dadosDaApi: any;
+  modal: any = null;
+  selectedItem: any = null;
+
 
   constructor(private meuServico: MeuServicoService) { }
 
@@ -17,6 +20,12 @@ export class RegistrosComponent {
       console.log(data.data);
     });
   }
+
+  selectItem(item: any) {
+    this.selectedItem = item;
+    this.modal = item;
+  }
+
 
 
 }

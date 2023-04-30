@@ -2,10 +2,26 @@
 <div class="body ">
   <h3>Registros</h3>
 
+
   <div class="row container">
-    <div class="card green" *ngFor="let item of dadosDaApi">
+    <div (click)="selectItem(item)" class="card green" *ngFor="let item of dadosDaApi">
+      <div>
       <h2>{{item.nome}}</h2>
-      <p>{{item.email}}</p>
+      <p># {{item.id}}</p>
+      <p>E-mail: {{item.email}}</p>
+      <p>Validação: {{item.validacao}}</p>
+      <div *ngIf="item == selectedItem">
+      <p >Aticação: {{item.datavalidacao}}</p>
+      <p>CPF: {{item.cpf}}</p>
+      <p>conhecimentos: {{item.conhecimentos}}</p>
+      <p>Celular: {{item.celular}}</p>
+      <p>Criado em: {{item.created_at}}</p>
+      <button to="valida" >Validação</button>
+      </div>
+
+
+      </div>
     </div>
   </div>
 </div>
+
