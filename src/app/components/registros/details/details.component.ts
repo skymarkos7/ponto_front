@@ -30,6 +30,7 @@ export class DetailsComponent implements OnInit {
   mudaStatus() {
     let id = this.meuServico.getInformacoes();
     this.meuServico.status(id, undefined);
+    
   }
 
 }
