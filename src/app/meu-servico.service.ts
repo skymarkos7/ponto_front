@@ -8,13 +8,24 @@ import { Observable } from 'rxjs';
 export class MeuServicoService {
   constructor(private http: HttpClient) { }
 
+  private informacoes: any;
+
+
   getData(): Observable<any> {
     return this.http.get('http://127.0.0.1:8000/api/registros');
   }
 
-  getDetails(): Observable<any> {
-    console.log('service');
-    return this.http.get('http://127.0.0.1:8000/api/detalhes/1');
+  getDetails(id: any): Observable<any> {
+    return this.http.get(`http://127.0.0.1:8000/api/detalhes/${id}`);
 
+  }
+
+  setInformacoes(dados: any) {
+    this.informacoes = dados;
+    console.log(this.informacoes);
+  }
+
+  getInformacoes(): any {
+    return this.informacoes;
   }
 }

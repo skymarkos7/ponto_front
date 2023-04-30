@@ -17,14 +17,13 @@ export class DetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private meuServico: MeuServicoService) {}
 
   ngOnInit() {
-    this.id = this.route.snapshot.params['id'];
+    this.id = this.meuServico.getInformacoes();
     console.log(this.id);
-    this.meuServico.getDetails().subscribe(data => {
+
+    this.meuServico.getDetails(this.id).subscribe(data => {
       this.dadosDetails = data;
-      console.log(data);
     });
+
   }
-
-
 
 }

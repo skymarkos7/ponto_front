@@ -24,6 +24,7 @@ export class RegistrosComponent {
   selectItem(item: any) {
     this.selectedItem = item;
     this.modal = item;
+    this.meuServico.setInformacoes(item.id);
   }
 
 
