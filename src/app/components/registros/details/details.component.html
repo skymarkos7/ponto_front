@@ -1,5 +1,5 @@
 <h2>details</h2>
-<a routerLink="/registros"><button >Voltar</button></a>
+<a routerLink="/registros"><button>Voltar</button></a>
 
 
 
@@ -10,23 +10,27 @@
   <div class="card-content">
     <h2>{{dadosDetails.nome}}</h2>
     <div class="card-info-item">
-      <p>#{{dadosDetails.id}}</p>
+      <p>id #{{dadosDetails.id}}</p>
       <p>conhecimentos: {{dadosDetails.conhecimentos}}</p>
       <p>{{dadosDetails.cpf}}</p>
-
+      <a href="mailto:{{dadosDetails.email}}">{{dadosDetails.email}}</a>
+        <p>{{dadosDetails.celular}}</p>
     </div>
     <div class="card-info">
       <div class="card-info-item">
         <i class="fas fa-envelope"></i>
-        <a href="mailto:{{dadosDetails.email}}">{{dadosDetails.email}}</a>
-        <p>{{dadosDetails.celular}}</p>
-        <p>Status Validação: {{dadosDetails.validacao}}</p>
+
+        <div>
+          <span>Status:</span>
+          <span class="nao-validado" *ngIf="dadosDetails.validacao==0"> Não validado</span>
+          <span class="validado" *ngIf="dadosDetails.validacao!==0">Validado</span>
+        </div>
         <p>Data da validação: {{dadosDetails.datavalidacao}}</p>
         <p>Criado em: {{dadosDetails.created_at}}</p>
+        <div class="centro">
+        <button class="btn">Mudar status</button>
       </div>
-      <div class="card-info-item">
       </div>
     </div>
   </div>
 </div>
-
