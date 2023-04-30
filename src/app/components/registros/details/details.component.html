@@ -1,4 +1,5 @@
-<p>details</p>
+<h2>details</h2>
+<a routerLink="/registros"><button >Voltar</button></a>
 
 
 
@@ -8,19 +9,24 @@
   </div>
   <div class="card-content">
     <h2>{{dadosDetails.nome}}</h2>
-    <p>{{dadosDetails.conhecimentos}}</p>
+    <div class="card-info-item">
+      <p>#{{dadosDetails.id}}</p>
+      <p>conhecimentos: {{dadosDetails.conhecimentos}}</p>
+      <p>Status Validação: {{dadosDetails.validacao}}</p>
+      <p>{{dadosDetails.cpf}}</p>
+      <p>Criado em: {{dadosDetails.created_at}}</p>
+    </div>
     <div class="card-info">
       <div class="card-info-item">
-        <i class="fas fa-map-marker-alt"></i>
-        <span>Cidade, País</span>
-      </div>
-      <div class="card-info-item">
         <i class="fas fa-envelope"></i>
-        <a href="mailto:email@exemplo.com">email@exemplo.com</a>
+        <a href="mailto:{{dadosDetails.email}}">{{dadosDetails.email}}</a>
+        <p>{{dadosDetails.celular}}</p>
+        <p>Data da validação: {{dadosDetails.datavalidacao}}</p>
       </div>
       <div class="card-info-item">
-        <button>validar</button>
+        <!-- <button (click)="validar()" >validar</button> -->
       </div>
     </div>
   </div>
 </div>
+
