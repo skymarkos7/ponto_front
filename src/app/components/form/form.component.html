@@ -15,14 +15,20 @@ Bem vindo <span><b>{{nome}}</b></span> preencha o formulário a seguir <br>
   <input type="text" [(ngModel)]="cpf" maxlength="14" id="cpf" name="cpf" placeholder="___.___.___-__">
   <label for="name">Fone</label>
   <input type="text" [(ngModel)]="phone" placeholder="(__) _ _____-____" class="telefone" id="telefone" maxlength="16" name="phone">
-  <label for="name">Conhecimentos*</label>
-
+  <label for="name">Conhecimentos* </label>
+  <p>Arraste o mouse para selecionar multiplos</p>
   <select multiple [(ngModel)]="knowledge" name="knowledge">
+    <option value="git">Git</option>
+    <option value="react">React</option>
     <option value="php">PHP</option>
     <option value="node">Node.js</option>
+    <option value="typescripty">TypeScript</option>
+
+
+    <option value="banco">Banco de dados</option>
     <option value="devops">DevOps</option>
   </select>
-  
+
   <button type="submit">envia</button>
 </form>
 </div>

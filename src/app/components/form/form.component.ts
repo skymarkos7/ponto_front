@@ -62,22 +62,7 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(this.knowledge);
-    const array: any = this.knowledge;
-    if (array.length > 1) {
-      this.msg = 'Escolha no maximo 3 conhecimentos.';
-    }
-    const string = array.join(', ');
-    console.log(string);
-    this.knowledge = string;
 
-    let dadosForm = {
-      nome: this.name,
-      email: this.email,
-      cpf: this.cpf,
-      celular: this.phone,
-      conhecimentos: this.knowledge,
-    };
 
     /**
      * Validação de campos vazios e email
@@ -91,7 +76,26 @@ export class FormComponent implements OnInit {
     } else {
       const email: any = this.email;
       if (validarEmail(email)) {
-        this.meuServico.submitForm(dadosForm);
+
+        const array: any = this.knowledge;
+        if (array.length > 3) {
+          this.msg = 'Escolha no maximo 3 conhecimentos.';
+        }else{
+          const string = array.join('| ');
+          console.log(string);
+          this.knowledge = string;
+
+          let dadosForm = {
+            nome: this.name,
+            email: this.email,
+            cpf: this.cpf,
+            celular: this.phone,
+            conhecimentos: this.knowledge,
+          };
+
+          this.meuServico.submitForm(dadosForm);
+        }
+
       } else {
         this.msg = 'O email é inválido.';
       }
