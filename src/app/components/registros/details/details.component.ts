@@ -17,7 +17,6 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     let id = this.meuServico.getInformacoes();
-    console.log('get', id);
 
     this.meuServico.getDetails(id).subscribe(data => {
       this.dadosDetails = data;

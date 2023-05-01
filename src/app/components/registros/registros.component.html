@@ -16,10 +16,11 @@
         <span class="validado" *ngIf="item.validacao!==0">Validado</span>
       </div>
       <div *ngIf="item == selectedItem">
-      <p >Aticação: {{item.datavalidacao}}</p>
+        <br>
       <p>CPF: {{item.cpf}}</p>
       <p>conhecimentos: {{item.conhecimentos}}</p>
       <p>Celular: {{item.celular}}</p>
+      <p >Validação: {{item.datavalidacao}}</p>
       <p>Criado em: {{item.created_at}}</p>
       <a routerLink="/{{item.nome}}/validar"><button >Ver detalhes</button></a>
       </div>
