@@ -16,6 +16,8 @@ export class FormComponent implements OnInit {
   cpf: string | undefined;
   phone: string | undefined;
   knowledge: string | undefined;
+  retorno: any;
+  msg: any;
 
 
   constructor(private route: ActivatedRoute, private meuServico: MeuServicoService) {}
@@ -31,9 +33,13 @@ export class FormComponent implements OnInit {
   onSubmit() {
 
     let dadosForm = {"nome":this.name, "email":this.email, "cpf":this.cpf, "celular":this.phone, "conhecimentos":this.knowledge}
-    console.log(dadosForm);
 
     this.meuServico.submitForm(dadosForm);
+    let form:any = sessionStorage.getItem('form');
+    this.msg = form.split('"');
+
+    console.log(this.msg[3]);
+
 
   }
 

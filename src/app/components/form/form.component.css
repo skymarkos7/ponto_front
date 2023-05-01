@@ -68,3 +68,13 @@ input:invalid ~ .error-message {
   color: green;
   font-weight: bold;
 }
+
+
+.aviso {
+  background-color: #e44f14; /* cor de fundo */
+  color: #fff; /* cor do texto */
+  padding: 10px; /* espaço interno */
+  border-radius: 5px; /* bordas arredondadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* sombra */
+  text-align: center; /* alinhamento do texto */
+}

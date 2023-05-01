@@ -3,10 +3,10 @@
 ## Urls
 - `/registros`
   - Exisbe todos cadastros registrados
-- `/nome/validar`  
+- `/nomeQualquer/validar`  
   - detalhes de um colaborador 
-  - validar / invalidar cadastror
-- `/nome/registrar`
+  - validar / invalidar cadastro
+- `/nomeQualquer/registrar`
   - formulário de cadastro  
 
 

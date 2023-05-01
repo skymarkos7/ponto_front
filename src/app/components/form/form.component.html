@@ -1,7 +1,12 @@
 <h2>formulario</h2>
 Bem vindo <span><b>{{nome}}</b></span> preencha o formulário a seguir <br>
 
+<div>
 <form (submit)="onSubmit()">
+  <div *ngIf="msg" class="aviso">
+    <p>{{ msg[3] }}</p>
+  </div>
+
   <label for="name">Nome</label>
   <input type="text" [(ngModel)]="name" name="name">
   <label for="name">E-mail</label>
@@ -18,3 +23,4 @@ Bem vindo <span><b>{{nome}}</b></span> preencha o formulário a seguir <br>
   </select>
   <button type="submit">envia</button>
 </form>
+</div>
