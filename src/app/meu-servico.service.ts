@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,8 +8,13 @@ import { Observable } from 'rxjs';
 export class MeuServicoService {
   constructor(private http: HttpClient) { }
 
-  // private informacoes: any;
-
+  data = {
+    "nome": "João",
+    "email": "Silva",
+    "cpf": "joao.silva@example.com",
+    "celular": "555555",
+    "conhecimentos": "python",
+  };
 
   getData(): Observable<any> {
     return this.http.get('http://127.0.0.1:8000/api/registros');
@@ -38,4 +43,29 @@ export class MeuServicoService {
   getInformacoes(): any {
     return sessionStorage.getItem('id');
   }
+
+  // submitData(data: any) {
+  //   const url = 'http://127.0.0.1:8000/api/registrar';
+  //   return this.http.post(url, data);
+  // }
+
+  // submitForm(formData: any) {
+  //   const url = 'http://127.0.0.1:8000/api/registrar';
+  //   const body = JSON.stringify(formData);
+  //   return this.http.post(url, body, this.httpOptions);
+  // }
+
+      submitForm(dadosForm: { nome: string | undefined; email: string | undefined; cpf: string | undefined; celular: string | undefined; conhecimentos: string | undefined; }) {
+        this.http.post('http://127.0.0.1:8000/api/registrar', dadosForm).subscribe(
+          response => {
+            console.log('Resposta da API:', response);
+          },
+          error => {
+            console.error('Erro na requisição:', error);
+          }
+        );
+      }
+
+
+
 }

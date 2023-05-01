@@ -1,5 +1,15 @@
 # PontoFront
 
+## Urls
+- `/registros`
+  - Exisbe todos cadastros registrados
+- `/nome/validar`  
+  - detalhes de um colaborador 
+  - validar / invalidar cadastror
+- `/nome/registrar`
+  - formulário de cadastro  
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
 
 ## Development server
