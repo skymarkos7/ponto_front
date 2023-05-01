@@ -82,7 +82,6 @@ export class FormComponent implements OnInit {
           this.msg = 'Escolha no maximo 3 conhecimentos.';
         }else{
           const string = array.join('| ');
-          console.log(string);
           this.knowledge = string;
 
           let dadosForm = {

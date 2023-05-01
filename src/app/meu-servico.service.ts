@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ParseLocation } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root',
@@ -29,7 +28,6 @@ export class MeuServicoService {
     this.http
       .put(`http://127.0.0.1:8000/api/validar/${id}`, { cpf: '555555' })
       .subscribe((resultado) => {
-        console.log('Recurso atualizado:', resultado);
         document.location.reload();
       });
   }

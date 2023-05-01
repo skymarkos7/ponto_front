@@ -17,7 +17,6 @@ export class RegistrosComponent {
   ngOnInit() {
     this.meuServico.getData().subscribe(data => {
       this.dadosDaApi = data.data;
-      console.log(data.data);
     });
   }
 

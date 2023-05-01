@@ -23,14 +23,13 @@ export class DetailsComponent implements OnInit {
       this.dadosDetails = data;
     });
 
-    // console.log(this.meuServico.status(3, 0));
 
   }
 
   mudaStatus() {
     let id = this.meuServico.getInformacoes();
     this.meuServico.status(id, undefined);
-    
+
   }
 
 }

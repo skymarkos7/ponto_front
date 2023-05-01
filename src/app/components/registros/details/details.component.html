@@ -7,7 +7,8 @@
 
 <div class="card">
   <div class="card-image">
-    <img src="https://icon-library.com/images/person-png-icon/person-png-icon-29.jpg" alt="Foto da Pessoa">
+    <img *ngIf="dadosDetails.validacao==0" src="https://icon-library.com/images/person-png-icon/person-png-icon-29.jpg" alt="Foto da Pessoa">
+    <img *ngIf="dadosDetails.validacao!==0" src="https://cdn2.iconfinder.com/data/icons/flat-style-svg-icons-part-1/512/check_user_man-512.png" alt="Foto da Pessoa">
   </div>
   <div class="card-content">
     <h2>{{dadosDetails.nome}}</h2>
