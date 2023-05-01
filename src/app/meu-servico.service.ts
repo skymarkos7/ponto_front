@@ -53,12 +53,15 @@ export class MeuServicoService {
   }) {
     this.http.post('http://127.0.0.1:8000/api/registrar', dadosForm).subscribe(
       (response) => {
+        console.log(response);
         const jsonString = JSON.stringify(response);
         sessionStorage.setItem('form', jsonString);
+        document.location.reload();
       },
       (error) => {
         console.error('Erro na requisição:', error);
       }
     );
+
   }
 }

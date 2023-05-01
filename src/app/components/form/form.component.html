@@ -7,15 +7,15 @@ Bem vindo <span><b>{{nome}}</b></span> preencha o formulário a seguir <br>
     <p>{{ msg }}</p>
   </div>
 
-  <label for="name">Nome</label>
+  <label for="name">Nome*</label>
   <input type="text" [(ngModel)]="name" maxlength="100" name="name">
-  <label for="name">E-mail</label>
+  <label for="name">E-mail*</label>
   <input type="email" [(ngModel)]="email" maxlength="100" name="email">
-  <label for="name">CPF</label>
-  <input type="text" [(ngModel)]="cpf" maxlength="14" name="cpf">
+  <label for="name">CPF*</label>
+  <input type="text" [(ngModel)]="cpf" maxlength="14" id="cpf" name="cpf" placeholder="___.___.___-__">
   <label for="name">Fone</label>
-  <input type="tel" [(ngModel)]="phone" name="phone">
-  <label for="name">Conhecimentos</label>
+  <input type="tel" [(ngModel)]="phone" maxlength="20" name="phone">
+  <label for="name">Conhecimentos*</label>
   <select [(ngModel)]="knowledge" name="knowledge">
     <option value="php">PHP</option>
     <option value="node">Node.js</option>
@@ -24,3 +24,4 @@ Bem vindo <span><b>{{nome}}</b></span> preencha o formulário a seguir <br>
   <button type="submit">envia</button>
 </form>
 </div>
+

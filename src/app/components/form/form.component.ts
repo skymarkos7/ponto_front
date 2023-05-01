@@ -28,6 +28,27 @@ export class FormComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.nome = params['nome'];
     });
+
+    /**
+     * Validarções CPF
+     */
+    const cpfInput:any = document.getElementById('cpf');
+    cpfInput.oninput = function() {
+      let cpf = cpfInput.value;
+      cpf = cpf.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+      cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); // Coloca um ponto entre o terceiro e o quarto dígitos
+      cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); // Coloca um ponto entre o sétimo e o oitavo dígitos
+      cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // Coloca um hífen entre o décimo e o décimo primeiro dígitos (se houver)
+      cpfInput.value = cpf;
+    /**
+     * Fim Validarções CPF
+     */
+    }
+
+    let form:any = sessionStorage.getItem('form');
+        this.msg = form.split('"');
+        this.msg = this.msg[3];
+        sessionStorage.clear();
   }
 
   onSubmit() {
@@ -39,31 +60,35 @@ export class FormComponent implements OnInit {
       conhecimentos: this.knowledge,
     };
 
-    this.meuServico.submitForm(dadosForm);
-    // let form:any = sessionStorage.getItem('form');
-    // sessionStorage.clear();
-    // this.msg = form.split('"');
 
-    // console.log(this.msg[3]);
 
+
+    /**
+     * Validação de campos vazios e email
+     */
     if (
       this.name == undefined ||
       this.email == undefined ||
       this.cpf == undefined ||
-      this.phone == undefined ||
       this.knowledge == undefined
     ) {
-      this.msg = 'Preencha todos os campos';
+      this.msg = 'Preencha todos os campos obrigatórios.';
     } else {
       const email: any = this.email;
       if (validarEmail(email)) {
+        this.meuServico.submitForm(dadosForm);
+
+
       } else {
-        this.msg ='O email é inválido.';
+        this.msg = 'O email é inválido.';
       }
       function validarEmail(email: string) {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regex.test(email);
       }
     }
+    /**
+     * Fim Validação de campos vazios e email
+     */
   }
 }
