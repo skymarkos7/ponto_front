@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetailsComponent } from './components/registros/details/details.component';
 import { NavegacaoComponent } from './components/navegacao/navegacao.component';
 import { IConfig } from 'ngx-mask'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { IConfig } from 'ngx-mask'
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    FormsModule,
 
 
 

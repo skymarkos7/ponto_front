@@ -1,9 +1,27 @@
 <h2>formulario</h2>
 Bem vindo <span><b>{{nome}}</b></span> preencha o formulário a seguir <br>
 
-<form id="form">
+<form (submit)="onSubmit()">
+  <label for="name">Nome</label>
+<input type="text" [(ngModel)]="name" name="name">
+<label for="name">E-mail</label>
+<input type="email" [(ngModel)]="email" name="email">
+<label for="name">CPF</label>
+<input type="text" [(ngModel)]="cpf" name="cpf">
+<label for="name">Fone</label>
+<input type="tel" [(ngModel)]="phone" name="phone">
+<label for="name">Conhecimentos</label>
+<select [(ngModel)]="knowledge" name="knowledge">
+  <option value="php">PHP</option>
+  <option value="node">Node.js</option>
+  <option value="devops">DevOps</option>
+</select>
+<button type="submit">envia</button>
+</form>
+
+<!-- <form #myForm="ngForm" (submit)="onSubmit(myForm)">
   <label for="name">Nome:</label>
-  <input type="text" id="name" name="name" pattern="[A-Za-z\s]{3,}" required>
+  <input type="text" id="name" name="name" [(ngModel)]="name" name="name" pattern="[A-Za-z\s]{3,}" required>
 
   <label for="email">Email:</label>
   <input type="email" id="email" name="email" required>
@@ -22,5 +40,34 @@ Bem vindo <span><b>{{nome}}</b></span> preencha o formulário a seguir <br>
     <option value="devops">DevOps</option>
   </select>
 
+  <button>Enviar</button>
+</form> -->
+
+
+
+
+
+
+<!-- <form (submit)="onSubmit()">
+  <label for="name">Nome</label>
+  <input type="text" id="name" name="name" [(ngModel)]="formData.name" required>
+
+  <label for="email">E-mail</label>
+  <input type="email" id="email" name="email" [(ngModel)]="formData.email" required>
+
+  <label for="cpf">CPF</label>
+  <input type="text" id="cpf" name="cpf" [(ngModel)]="formData.cpf" required>
+
+  <label for="phone">Celular</label>
+  <input type="text" id="phone" name="phone" [(ngModel)]="formData.phone" required>
+
+  <label for="knowledge">Conhecimentos</label>
+  <select id="knowledge" name="knowledge" [(ngModel)]="formData.knowledge" required>
+    <option value="">Selecione uma opção</option>
+    <option value="php">PHP</option>
+    <option value="node">Node.js</option>
+    <option value="devops">DevOps</option>
+  </select>
+
   <button type="submit">Enviar</button>
-</form>
+</form> -->
