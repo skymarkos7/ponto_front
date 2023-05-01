@@ -32,23 +32,38 @@ export class FormComponent implements OnInit {
     /**
      * Validarções CPF
      */
-    const cpfInput:any = document.getElementById('cpf');
-    cpfInput.oninput = function() {
+    const cpfInput: any = document.getElementById('cpf');
+    cpfInput.oninput = function () {
       let cpf = cpfInput.value;
       cpf = cpf.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
       cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); // Coloca um ponto entre o terceiro e o quarto dígitos
       cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); // Coloca um ponto entre o sétimo e o oitavo dígitos
       cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // Coloca um hífen entre o décimo e o décimo primeiro dígitos (se houver)
       cpfInput.value = cpf;
+    };
+
     /**
-     * Fim Validarções CPF
-     */
+       * Validarções Telefone
+       */
+    const telefoneInput:any = document.getElementById('telefone');
+
+    telefoneInput.oninput = function() {
+      let telefone = telefoneInput.value;
+      telefone = telefone.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+      telefone = telefone.replace(/(\d{2})(\d)/, '($1) $2'); // Coloca parênteses em volta dos dois primeiros dígitos
+      telefone = telefone.replace(/(\d{1})(\d{4})(\d{4})$/, '$1 $2-$3'); // Coloca um espaço e um hífen entre o quinto e o sexto dígitos
+      telefoneInput.value = telefone;
     }
 
-    let form:any = sessionStorage.getItem('form');
-        this.msg = form.split('"');
-        this.msg = this.msg[3];
-        sessionStorage.clear();
+
+
+
+
+
+    let form: any = sessionStorage.getItem('form');
+    this.msg = form.split('"');
+    this.msg = this.msg[3];
+    sessionStorage.clear();
   }
 
   onSubmit() {
@@ -59,9 +74,6 @@ export class FormComponent implements OnInit {
       celular: this.phone,
       conhecimentos: this.knowledge,
     };
-
-
-
 
     /**
      * Validação de campos vazios e email
@@ -77,8 +89,6 @@ export class FormComponent implements OnInit {
       const email: any = this.email;
       if (validarEmail(email)) {
         this.meuServico.submitForm(dadosForm);
-
-
       } else {
         this.msg = 'O email é inválido.';
       }
