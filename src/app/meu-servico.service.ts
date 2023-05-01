@@ -35,8 +35,7 @@ export class MeuServicoService {
 
   setInformacoes(dados: any) {
     sessionStorage.setItem('id', dados);
-    // this.localStorageService.set('idade', 30);
-    // this.informacoes = dados;
+  
     console.log(dados);
   }
 
@@ -44,16 +43,7 @@ export class MeuServicoService {
     return sessionStorage.getItem('id');
   }
 
-  // submitData(data: any) {
-  //   const url = 'http://127.0.0.1:8000/api/registrar';
-  //   return this.http.post(url, data);
-  // }
 
-  // submitForm(formData: any) {
-  //   const url = 'http://127.0.0.1:8000/api/registrar';
-  //   const body = JSON.stringify(formData);
-  //   return this.http.post(url, body, this.httpOptions);
-  // }
 
       submitForm(dadosForm: { nome: string | undefined; email: string | undefined; cpf: string | undefined; celular: string | undefined; conhecimentos: string | undefined; }) {
         this.http.post('http://127.0.0.1:8000/api/registrar', dadosForm).subscribe(
