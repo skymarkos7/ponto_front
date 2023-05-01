@@ -1,0 +1,33 @@
+header {
+  background-color: #ffffff; /* cor de fundo */
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1); /* sombra */
+  height: 80px; /* altura */
+  display: flex; /* container flex */
+  justify-content: space-between; /* alinhar os itens em cada extremidade */
+  align-items: center; /* centralizar verticalmente os itens */
+  padding: 0px 30px; /* espaçamento interno */
+  /* position: fixed; fixar no topo da página */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999; /* posição em relação a outros elementos */
+}
+
+header h1 {
+  font-size: 32px; /* tamanho da fonte */
+  font-weight: bold; /* negrito */
+  color: #333333; /* cor do texto */
+}
+
+header a {
+  font-size: 18px; /* tamanho da fonte */
+  font-weight: bold; /* negrito */
+  color: #666666; /* cor do texto */
+  text-decoration: none; /* sem sublinhado */
+  margin-left: 20px; /* espaçamento entre os links */
+  transition: all 0.2s ease-in-out; /* transição suave */
+}
+
+header a:hover {
+  color: #333333; /* mudar a cor do texto no hover */
+}

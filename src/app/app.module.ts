@@ -8,7 +8,6 @@ import { RegistrosComponent } from './components/registros/registros.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetailsComponent } from './components/registros/details/details.component';
-import { NavegacaoComponent } from './components/navegacao/navegacao.component';
 import { IConfig } from 'ngx-mask'
 import { FormsModule } from '@angular/forms';
 
@@ -18,7 +17,6 @@ import { FormsModule } from '@angular/forms';
     FormComponent,
     RegistrosComponent,
     DetailsComponent,
-    NavegacaoComponent,
 
   ],
   imports: [

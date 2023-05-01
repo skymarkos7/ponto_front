@@ -58,6 +58,10 @@ button{
   border-left: 3px solid #3bb54a;
 }
 
+.titulo{
+  margin: 30px;
+}
+
 .red {
   border-left: 3px solid #b3404a;
 }

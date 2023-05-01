@@ -8,6 +8,12 @@ form {
   padding: 32px;
   background-color: #f7f7f7;
   border-radius: 8px;
+
+
+}
+
+.titulo{
+  margin: 30px;
 }
 
 /* Estilo para as labels */
@@ -56,6 +62,7 @@ input:invalid ~ .error-message {
   color: red;
   font-size: 12px;
 }
+
 
 /* Estilo para o container de mensagens de erro */
 .error-message-container {
