@@ -8,11 +8,11 @@ Bem vindo <span><b>{{nome}}</b></span> preencha o formulário a seguir <br>
   </div>
 
   <label for="name">Nome</label>
-  <input type="text" [(ngModel)]="name" name="name">
+  <input type="text" [(ngModel)]="name" maxlength="100" name="name">
   <label for="name">E-mail</label>
-  <input type="email" [(ngModel)]="email" name="email">
+  <input type="email" [(ngModel)]="email" maxlength="100" name="email">
   <label for="name">CPF</label>
-  <input type="text" [(ngModel)]="cpf" name="cpf">
+  <input type="text" [(ngModel)]="cpf" maxlength="14" name="cpf">
   <label for="name">Fone</label>
   <input type="tel" [(ngModel)]="phone" name="phone">
   <label for="name">Conhecimentos</label>
