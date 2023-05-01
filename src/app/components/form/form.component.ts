@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NgForm } from '@angular/forms';
 import { MeuServicoService } from '../../meu-servico.service';
+import { count } from 'rxjs';
 
 @Component({
   selector: 'app-form',
@@ -30,7 +30,7 @@ export class FormComponent implements OnInit {
     });
 
     /**
-     * Validarções CPF
+     * Mascara para CPF
      */
     const cpfInput: any = document.getElementById('cpf');
     cpfInput.oninput = function () {
@@ -43,22 +43,17 @@ export class FormComponent implements OnInit {
     };
 
     /**
-       * Validarções Telefone
-       */
-    const telefoneInput:any = document.getElementById('telefone');
+     * Mascara para Telefone
+     */
+    const telefoneInput: any = document.getElementById('telefone');
 
-    telefoneInput.oninput = function() {
+    telefoneInput.oninput = function () {
       let telefone = telefoneInput.value;
       telefone = telefone.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
       telefone = telefone.replace(/(\d{2})(\d)/, '($1) $2'); // Coloca parênteses em volta dos dois primeiros dígitos
       telefone = telefone.replace(/(\d{1})(\d{4})(\d{4})$/, '$1 $2-$3'); // Coloca um espaço e um hífen entre o quinto e o sexto dígitos
       telefoneInput.value = telefone;
-    }
-
-
-
-
-
+    };
 
     let form: any = sessionStorage.getItem('form');
     this.msg = form.split('"');
@@ -67,6 +62,15 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit() {
+    // console.log(this.knowledge);
+    const array: any = this.knowledge;
+    if (array.length > 1) {
+      this.msg = 'Escolha no maximo 3 conhecimentos.';
+    }
+    const string = array.join(', ');
+    console.log(string);
+    this.knowledge = string;
+
     let dadosForm = {
       nome: this.name,
       email: this.email,
@@ -81,8 +85,7 @@ export class FormComponent implements OnInit {
     if (
       this.name == undefined ||
       this.email == undefined ||
-      this.cpf == undefined ||
-      this.knowledge == undefined
+      this.cpf == undefined
     ) {
       this.msg = 'Preencha todos os campos obrigatórios.';
     } else {
@@ -97,8 +100,5 @@ export class FormComponent implements OnInit {
         return regex.test(email);
       }
     }
-    /**
-     * Fim Validação de campos vazios e email
-     */
   }
 }

@@ -16,11 +16,13 @@ Bem vindo <span><b>{{nome}}</b></span> preencha o formulário a seguir <br>
   <label for="name">Fone</label>
   <input type="text" [(ngModel)]="phone" placeholder="(__) _ _____-____" class="telefone" id="telefone" maxlength="16" name="phone">
   <label for="name">Conhecimentos*</label>
-  <select [(ngModel)]="knowledge" name="knowledge">
+
+  <select multiple [(ngModel)]="knowledge" name="knowledge">
     <option value="php">PHP</option>
     <option value="node">Node.js</option>
     <option value="devops">DevOps</option>
   </select>
+  
   <button type="submit">envia</button>
 </form>
 </div>
